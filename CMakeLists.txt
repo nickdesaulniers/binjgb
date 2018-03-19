@@ -103,6 +103,15 @@ if (NOT EMSCRIPTEN)
     target_copy_to_bin(binjgb-debugger)
   endif ()
 
+  add_executable(comparator
+    comparator.c
+    src/common.c
+    src/emulator.c
+    pocketgb/mmu.c
+    pocketgb/cpu.c
+  )
+  install(TARGETS comparator DESTINATION bin)
+  target_copy_to_bin(comparator)
   add_executable(binjgb-tester
     src/common.c
     src/options.c

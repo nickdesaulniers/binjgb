@@ -3714,6 +3714,10 @@ void emulator_delete(Emulator* e) {
   }
 }
 
+Registers* get_regs(struct Emulator* emu) {
+  return &emu->state.reg;
+}
+
 void emulator_cycles_to_time(Cycles cycles, u32* hr, u32* min, u32* sec,
                              u32* ms) {
   *hr = cycles / (60 * 60 * (Cycles)CPU_CYCLES_PER_SECOND);

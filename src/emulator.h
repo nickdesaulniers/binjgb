@@ -169,6 +169,7 @@ Result emulator_write_ext_ram_to_file(struct Emulator*, const char* filename);
 
 EmulatorEvent emulator_step(struct Emulator*);
 EmulatorEvent emulator_run_until(struct Emulator*, Cycles until_cycles);
+Registers* get_regs(struct Emulator* emu);
 
 #ifdef __cplusplus
 }
