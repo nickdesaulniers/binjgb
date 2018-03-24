@@ -112,6 +112,15 @@ if (NOT EMSCRIPTEN)
   )
   install(TARGETS comparator DESTINATION bin)
   target_copy_to_bin(comparator)
+  add_executable(observe
+    observe.c
+    src/common.c
+    src/emulator.c
+    pocketgb/mmu.c
+    pocketgb/cpu.c
+  )
+  install(TARGETS observe DESTINATION bin)
+  target_copy_to_bin(observe)
   add_executable(binjgb-tester
     src/common.c
     src/options.c

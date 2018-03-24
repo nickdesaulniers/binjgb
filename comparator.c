@@ -108,6 +108,13 @@ int main (int argc, char** argv) {
       print_regs_test(test_reg);
       break;
     }
+    /*if (test_reg->pc == 0xC0B0) {*/
+      /*printf("XXX: " PRIbyte " " PRIbyte " " PRIbyte "\n",*/
+        /*rb(test->mmu, test_reg->pc),*/
+        /*rb(test->mmu, test_reg->pc + 1),*/
+        /*rb(test->mmu, test_reg->pc + 2));*/
+      /*break;*/
+    /*}*/
     // step forward
     emulator_step(ref);
     tick_once(test);
