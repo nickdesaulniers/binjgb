@@ -37,6 +37,39 @@ struct cpu* setup_test (const char* const rom_fname) {
   return cpu;
 }
 
+void print_regs(Registers* const reg) {
+  printf("expected:\n");
+  printf("a: " PRIbyte "\n", reg->A);
+  printf("b: " PRIbyte "\n", reg->B);
+  printf("c: " PRIbyte "\n", reg->C);
+  printf("d: " PRIbyte "\n", reg->D);
+  printf("e: " PRIbyte "\n", reg->E);
+  printf("h: " PRIbyte "\n", reg->H);
+  printf("l: " PRIbyte "\n", reg->L);
+  printf("sp: " PRIshort "\n", reg->SP);
+  printf("pc: " PRIshort "\n", reg->PC);
+  printf("z: %d\n", reg->F.Z);
+  printf("n: %d\n", reg->F.N);
+  printf("h: %d\n", reg->F.H);
+  printf("c: %d\n", reg->F.C);
+}
+
+void print_regs_test(struct registers* reg) {
+  printf("actual:\n");
+  printf("a: " PRIbyte "\n", reg->a);
+  printf("b: " PRIbyte "\n", reg->b);
+  printf("c: " PRIbyte "\n", reg->c);
+  printf("d: " PRIbyte "\n", reg->d);
+  printf("e: " PRIbyte "\n", reg->e);
+  printf("h: " PRIbyte "\n", reg->h);
+  printf("l: " PRIbyte "\n", reg->l);
+  printf("sp: " PRIshort "\n", reg->sp);
+  printf("pc: " PRIshort "\n", reg->pc);
+  printf("z: %d\n", reg->f.z);
+  printf("n: %d\n", reg->f.n);
+  printf("h: %d\n", reg->f.h);
+  printf("c: %d\n", reg->f.c);
+}
 
 void print_pc (struct Emulator* ref) {
   fprintf(stderr, PRIshort ",", get_regs(ref)->PC);

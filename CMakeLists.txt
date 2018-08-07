@@ -109,6 +109,7 @@ if (NOT EMSCRIPTEN)
     src/emulator.c
     pocketgb/mmu.c
     pocketgb/cpu.c
+    pocketgb/timer.c
   )
   install(TARGETS comparator DESTINATION bin)
   target_copy_to_bin(comparator)
@@ -118,6 +119,7 @@ if (NOT EMSCRIPTEN)
     src/emulator.c
     pocketgb/mmu.c
     pocketgb/cpu.c
+    pocketgb/timer.c
   )
   install(TARGETS observe DESTINATION bin)
   target_copy_to_bin(observe)
